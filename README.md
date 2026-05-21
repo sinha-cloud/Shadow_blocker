@@ -93,3 +93,47 @@ The core scanning and risk calculations are backed by automated tests. To run th
 ```bash
 python -m unittest discover -s tests -p "test_*.py"
 ```
+
+---
+
+## 📦 Sharing & Standalone Distribution
+
+You can share **ShadowBlocker** with another system using one of the following methods:
+
+### Method 1: Share as a Standalone Executable (`.exe`) - Recommended for End-Users
+You can package the application into a single `.exe` file. The recipient can run it immediately on any Windows machine **without needing to install Python, git, or any external libraries**.
+
+1. Install PyInstaller in your virtual environment:
+   ```bash
+   pip install pyinstaller
+   ```
+2. Build the standalone executable:
+   ```bash
+   pyinstaller --noconsole --onefile --name ShadowBlocker main.py
+   ```
+   *Note: `--noconsole` hides the terminal shell window in the background, and `--onefile` bundles everything into a single file.*
+3. Retrieve your compiled file from the newly created `dist/` directory:
+   ```text
+   dist/ShadowBlocker.exe
+   ```
+4. **Copy and Share**: Simply send the `ShadowBlocker.exe` file to any other Windows computer!
+
+### Method 2: Share via GitHub (For Developers & Technical Users)
+Since the project is already published on GitHub, other developers can run it directly from source:
+
+1. On the target machine, clone the repository:
+   ```bash
+   git clone https://github.com/sinha-cloud/Shadow_blocker.git
+   cd Shadow_blocker
+   ```
+2. Set up a virtual environment and install dependencies:
+   ```bash
+   python -m venv venv
+   venv\Scripts\activate
+   pip install -r requirements.txt
+   ```
+3. Run the application:
+   ```bash
+   python main.py
+   ```
+
