@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Super AdBlocker Pro Max",
+  "version": "4.2.1",
+  "description": "Block all ads and popups on the web automatically. Speed up your browsing experience.",
+  "permissions": [
+    "cookies",
+    "webRequest",
+    "webRequestBlocking",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
